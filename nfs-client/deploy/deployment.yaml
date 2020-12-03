@@ -27,13 +27,13 @@ spec:
               mountPath: /persistentvolumes
           env:
             - name: PROVISIONER_NAME
-              value: fuseim.pri/ifs
+              value: nfs.micro1.tampil.id/nfs
             - name: NFS_SERVER
-              value: 10.10.10.60
+              value: nfs.micro1.tampil.id
             - name: NFS_PATH
-              value: /ifs/kubernetes
+              value: /mnt/kube_storage
       volumes:
         - name: nfs-client-root
           nfs:
-            server: 10.10.10.60
-            path: /ifs/kubernetes
+            server: nfs.micro1.tampil.id
+            path: /mnt/kube_storage
